@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>Datos para el algoritmo</title>
+    <style>
+        body{
+            background-image: url('/static/ciber.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Quicksand', sans-serif;
+            font-family: 'Titillium Web', sans-serif;
+            
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: 500px;
+            background-color: rgb(21, 20, 24);
+            border-radius: 10px;
+            padding: 20px;
+            align-items: center;
+            border-style: solid;
+            border-color: turquoise;            
+        }
+
+        p{
+            font-weight: bold;
+            color: turquoise;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        span{
+            width: 100%;
+            color: turquoise;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .boton{
+            margin-top: 20px;
+            background-color: yellow;
+            height: 45px;
+            width: 250px;
+            border-radius: 10px;
+            color: white;
+            color:  rgb(21, 20, 24);
+        }
+
+        input{
+            width: 300px;
+            
+        }
+
+        .metedatos{
+            background-color: rgb(78, 78, 78);
+            border-style: solid;
+            border-color: fuchsia;
+            color: yellow;
+            height: 30px;
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        .subir{
+            background-color: yellow;
+        }
+
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="contenedor1">
+        <form action="/procesar_formulario" method="post" enctype="multipart/form-data">
+            <p>
+                Hiperparámetros para el algoritmo genético
+            </p>
+            <span>
+                Tamaño de la matriz
+            </span>
+            <input type="number" id="tam_matriz" name="tam_matriz" class="metedatos">
+            <span>Seleccionar matriz</span>
+            <input type="file" id="arch_matriz" name="arch_matriz" class="subir">
+            <span>Tamaño de la población</span>
+            <input type="number" id="tam_pob" name="tam_pob" class="metedatos" required>
+            <span>Probabilidad de cruce</span>
+            <input type="number" max="1" min="0" step="0.1" id="prb_cru" name="prb_cru" class="metedatos" required>
+            <span>Probabilidad de mutación</span>
+            <input type="number" max="1" min="0" step="0.1" id="prb_mut" name="prb_mut" class="metedatos" required>
+            <span>Número de generaciones</span>
+            <input type="number" id="num_gen" name="num_gen" class="metedatos" required>
+            <input type="submit" class="boton">
+        </form>
+    </div>
+</body>
+
+</html>

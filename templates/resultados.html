@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>Resultados algoritmo genético</title>
+    <style>
+        body {
+            background-image: url('/static/ciber.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            font-family: 'Orbitron', sans-serif;
+            padding-top: 60px;
+            padding-bottom: 60px;
+            color: yellow;
+        }
+
+        .principal {
+            display: flex;
+            flex-direction: column;
+            width: 1000px;
+            height: 100%;
+            background-color: rgb(21, 20, 24);
+            border-radius: 10px;
+            padding: 20px;
+            align-items: center;
+            border-style: solid;
+            border-color: turquoise;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px;
+        }
+
+        td,
+        th {
+            border: 3px double fuchsia;
+            padding: 8px;
+            text-align: center;
+
+        }
+
+        p {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .volver{
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="principal">
+        <a href="/">
+            <img src="static/homecyber.png" alt="Texto alternativo de la imagen" class="volver">
+        </a>        
+        <p>Tabla de generaciones</p>
+        <table>
+
+            <tr>
+                <th>Generacion</th>
+                <th>Mejor aptitud</th>
+                <th>Peor aptitud</th>
+                <th>Promedio</th>
+                <th>Desviación estándar</th>
+            </tr>
+            {% for fila in datos %}
+            <tr>
+                {% for valor in fila %}
+                <td>{{ valor }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <p>Gráfica con los valores</p>
+        <img src="{{ imagen_path }}" alt="Mi Imagen">
+    </div>
+
+</body>
+
+</html>
